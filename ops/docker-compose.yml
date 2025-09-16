@@ -1,0 +1,10 @@
+services:
+  users:
+    build:
+      context: ../services/users
+      dockerfile: Dockerfile
+    image: users-service:dev
+    container_name: users-service
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
