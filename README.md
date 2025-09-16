@@ -65,7 +65,8 @@ sre-lab-wilnick/
 
 📌 Status
 
-🟢 Week 1 in progress → Building core microservices and Docker setup.
+🟢 Week 1: 3 services are running with Docker Compose; GitHub CI builds all images..
+![alt text](image.png)
 
 ⸻
 
