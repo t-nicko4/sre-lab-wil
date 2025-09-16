@@ -1,0 +1,35 @@
+
+name: CI - Build Services
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build users
+        uses: docker/build-push-action@v5
+        with:
+          context: ./services/users
+          push: false
+          tags: users-service:ci
+
+      - name: Build orders
+        uses: docker/build-push-action@v5
+        with:
+          context: ./services/orders
+          push: false
+          tags: orders-service:ci
+
+      - name: Build inventory
+        uses: docker/build-push-action@v5
+        with:
+          context: ./services/inventory
+          push: false
+          tags: inventory-service:ci
