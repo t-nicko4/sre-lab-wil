@@ -17,3 +17,13 @@ services:
     ports:
       - "8001:8001"
     restart: unless-stopped
+
+  inventory:
+    build:
+      context: ../services/inventory
+      dockerfile: Dockerfile
+    image: inventory-service:dev
+    container_name: inventory-service
+    ports:
+      - "8002:8002"
+    restart: unless-stopped
