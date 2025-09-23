@@ -1,0 +1,27 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  # scrape Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['prometheus:9090']
+
+  # users service (FastAPI)
+  - job_name: 'users'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['users:8000']
+
+  # orders service (Express) - we'll add /metrics later
+  - job_name: 'orders'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['orders:8001']
+
+  # inventory service (Go Gin) - we'll add /metrics later
+  - job_name: 'inventory'
+    metrics_path: /metrics
+    static_configs:
+      - targets: ['inventory:8002']
