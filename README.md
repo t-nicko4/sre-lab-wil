@@ -23,7 +23,7 @@ This project is both a learning lab and a portfolio showcase. It helps me sharpe
 
 ⸻
 
-🚀 Getting Started
+0🚀 Getting Started
 
 Clone the repo:
 
@@ -56,7 +56,7 @@ Each stage will be documented in docs/ with screenshots, configs, and learnings.
 📂 Repo Structure (planned)
 
 sre-lab-wilnick/
-├─ services/        # microservices (users, orders, inventory)
+├─ services/        # microservices (users, orders, inventory) 
 ├─ ops/             # docker-compose, observability, terraform, ansible
 ├─ security/        # suricata, splunk
 ├─ incidents/       # runbooks, RCA templates

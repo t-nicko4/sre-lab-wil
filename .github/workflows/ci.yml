@@ -14,6 +14,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build users
+        if: ${{ hashFiles('services/users/**') != '' }}
         uses: docker/build-push-action@v5
         with:
           context: ./services/users
@@ -21,6 +22,7 @@ jobs:
           tags: users-service:ci
 
       - name: Build orders
+        if: ${{ hashFiles('services/orders/**') != '' }}
         uses: docker/build-push-action@v5
         with:
           context: ./services/orders
@@ -28,6 +30,7 @@ jobs:
           tags: orders-service:ci
 
       - name: Build inventory
+        if: ${{ hashFiles('services/inventory/**') != '' }}
         uses: docker/build-push-action@v5
         with:
           context: ./services/inventory
